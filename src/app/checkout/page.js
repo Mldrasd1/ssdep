@@ -9,7 +9,7 @@ export default function CheckoutPage() {
         <div className="checkout-header-left-section">
          <Link href="/" className="logo-link">MOULOUD</Link>
         </div>
-
+        
         <div className="checkout-header-middle-section">
           Checkout (<Link className="return-to-home-link"
             href="/">4 items</Link>)
