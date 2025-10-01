@@ -12,7 +12,7 @@ export const CartProvider = ({children}) => {
       /*******************************/
       // Fetch delivery options when the component mounts
     useEffect(() => {
-       axios.get('http://localhost:3000/api/delivery-Options?expand=estimatedDeliveryTime')
+       axios.get('https://backendmodules.onrender.com/api/delivery-Options?expand=estimatedDeliveryTime')
   .then((response) => { 
       setDeliveryOptions(response.data); // here with axios we dont want to use json() we get the data from the response directly
     })
@@ -22,7 +22,7 @@ export const CartProvider = ({children}) => {
    
         // This will run only once when the component mounts
     /*useEffect(() => {
-        axios.get('http://localhost:3000/api/cart-items?expand=product')
+        axios.get('https://backendmodules.onrender.com/api/cart-items?expand=product')
   .then((response) => { 
       setCartItems(response.data); // here with axios we dont want to use json() we get the data from the response directly
     })
@@ -30,7 +30,7 @@ export const CartProvider = ({children}) => {
       // mehthod of fetching data using async await (preferred)
       useEffect(() => {
         const HelpgettingData = async () => { // here when we use async await we need to create a function inside useEffect and call it
-          const response = await axios.get('http://localhost:3000/api/cart-items?expand=product')
+          const response = await axios.get('https://backendmodules.onrender.com/api/cart-items?expand=product')
       setCartItems(response.data); // here with axios we dont want to use json() we get the data from the response directly
       }
       HelpgettingData(); // calling the async function it help us usiing useEffect with async await
@@ -38,14 +38,14 @@ export const CartProvider = ({children}) => {
       /*******************************/
       // method of fetching data using get then (not preferred) 
       useEffect(() => {
-        axios.get('http://localhost:3000/api/payment-summary')
+        axios.get('https://backendmodules.onrender.com/api/payment-summary')
   .then((response) => { 
       setPaymentSummary(response.data); // here with axios we dont want to use json() we get the data from the response directly
     })
       }, [cartItems]);
       /*******************************/
        useEffect(() => {
-        axios.get('http://localhost:3000/api/orders?expand=products')
+        axios.get('https://backendmodules.onrender.com/api/orders?expand=products')
   .then((response) => { 
       setOrders(response.data); // here with axios we dont want to use json() we get the data from the response directly
     })

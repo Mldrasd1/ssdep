@@ -13,8 +13,8 @@ export default function CheckoutPage() {
         const { totalQuantity,paymentSummary ,deliveryOptions,totalPrice, cartItems} = useContext(CartContext)
        const router = useRouter()                                                                
        const  creatOrder = async () =>{
-                 await axios.post('http://localhost:3000/api/orders')
-                 router.push('http://localhost:4000//orders')
+                 await axios.post('https://backendmodules.onrender.com/api/orders')
+                 router.push('/orders')
                  }
   return (
   <>
@@ -45,7 +45,7 @@ export default function CheckoutPage() {
               return option.id === item.deliveryOptionId;
               });
               const dleteCartItem = async() => {
-               await  axios.delete( `http://localhost:3000/api/cart-items/${item.productId}`)
+               await  axios.delete( `https://backendmodules.onrender.com/api/cart-items/${item.productId}`)
               }
               return (
               <div className="cart-item-container" key={item.id}>
@@ -89,7 +89,7 @@ export default function CheckoutPage() {
                     }
                     const updateDeliveryOption = async () => {
                       // Update the delivery option for the current cart item
-                     await axios.put( `http://localhost:3000/api/cart-items/${item.productId}` , {
+                     await axios.put( `https://backendmodules.onrender.com/api/cart-items/${item.productId}` , {
                      deliveryOptionId: option.id
                      }  )
                     }

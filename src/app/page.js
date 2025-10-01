@@ -8,7 +8,7 @@ import Product from "./components/Product";
 export default function Home() {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3000/api/products')
+    axios.get('https://backendmodules.onrender.com/api/products')
   .then((response) => 
     { setProduct(response.data); // here with axios we dont want to use json() we get the data from the response directly
     })
@@ -16,7 +16,7 @@ export default function Home() {
   
  
   /* the same thing as axios but this is harder to handle
-  fetch('http://localhost:3000/api/products')
+  fetch('https://backendmodules.onrender.com/api/products')
   .then((response) => 
     {
 return response.json() we use json to convert the response to json format

@@ -13,7 +13,7 @@ export default function Header() {
      const [cartItems, setCartItems] = useState([]);
     useEffect(() => {
         // This will run only once when the component mounts
-      axios.get('http://localhost:3000/api/cart-items')
+      axios.get('https://backendmodules.onrender.com/api/cart-items')
   .then((response) => 
     {  
       setCartItems(response.data); // here with axios we dont want to use json() we get the data from the response directly
